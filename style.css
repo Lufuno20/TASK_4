@@ -303,3 +303,7 @@ h1 {
   letter-spacing: 3px;
   opacity: 0.6;
 }
+.git_link {
+  color: #d0d0d0;
+  cursor: pointer;
+}
