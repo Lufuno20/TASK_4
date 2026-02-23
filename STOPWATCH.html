@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Stopwatch</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- FONT STYLE LINK -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400;700&display=swap"
+      rel="stylesheet" />
+
+    <!-- GSAP ANIMATION -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <!-- FONTAWESOME LINK -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+
+    <!-- CSS FILE -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <canvas id="calmCanvas"></canvas>
+
+      <div class="content home-page">
+        <h1>STOPWATCH</h1>
+        <button class="play-btn">PLAY</button>
+      </div>
+
+      <!-- ======== EXERCISE PAGE ======= -->
+      <div class="page exercise-page">
+        <div class="exercise-title">STOPWATCH</div>
+
+        <div class="columns">
+          <div class="column">
+            <div class="section-title">STRENGTH</div>
+
+            <div class="exercise-card" data-type="reps" data-name="LIFTING">
+              <img
+                src="assets/icons/person-lifting-weights-svgrepo-com.png"
+                data-static="assets/icons/person-lifting-weights-svgrepo-com.png"
+                data-animated="assets/icons/weightlifting.gif"
+                class="gif-icon" />
+              <span>LIFTING</span>
+            </div>
+
+            <div class="exercise-card" data-type="reps" data-name="PLANKS">
+              <img
+                src="assets/icons/planking-svgrepo-com.png"
+                data-static="assets/icons/planking-svgrepo-com.png"
+                data-animated="assets/icons/PLANK.gif"
+                class="gif-icon" />
+              <span>PLANKS</span>
+            </div>
+
+            <div class="exercise-card" data-type="reps" data-name="PUSHUPS">
+              <img
+                src="assets/icons/push-up-svgrepo-com.png"
+                data-static="assets/icons/push-up-svgrepo-com.png"
+                data-animated="assets/icons/PUSHUP.gif"
+                class="gif-icon" />
+              <span>PUSH UPS</span>
+            </div>
+
+            <div class="exercise-card" data-type="reps" data-name="SQUATS">
+              <img
+                src="assets/icons/SQUAT.png"
+                data-static="assets/icons/SQUAT.png"
+                data-animated="assets/icons/squat.gif"
+                class="gif-icon" />
+              <span>SQUATS</span>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="section-title">CARDIO</div>
+
+            <div class="exercise-card" data-type="timer" data-name="RUNNING">
+              <img
+                src="assets/icons/running-svgrepo-com.png"
+                data-static="assets/icons/running-svgrepo-com.png"
+                data-animated="assets/icons/running.gif"
+                class="gif-icon" />
+              <span>RUNNING / SPRINT</span>
+            </div>
+
+            <div class="exercise-card" data-type="timer" data-name="TREADMILL">
+              <img
+                src="assets/icons/treadmill-svgrepo-com.png"
+                data-static="assets/icons/treadmill-svgrepo-com.png"
+                data-animated="assets/icons/treadmill.gif"
+                class="gif-icon" />
+              <span>TREADMILL</span>
+            </div>
+
+            <div class="exercise-card" data-type="timer" data-name="SWIMMING">
+              <img
+                src="assets/icons/swimming-svgrepo-com.png"
+                data-static="assets/icons/swimming-svgrepo-com.png"
+                data-animated="assets/icons/swimming.gif"
+                class="gif-icon" />
+              <span>SWIMMING</span>
+            </div>
+
+            <div class="exercise-card" data-type="timer" data-name="WALKING">
+              <img
+                src="assets/icons/walking-svgrepo-com.png"
+                data-static="assets/icons/walking-svgrepo-com.png"
+                data-animated="assets/icons/walk.gif"
+                class="gif-icon" />
+              <span>WALKING</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ======== TIMER PAGE ======= -->
+      <div class="page workout-page" style="opacity: 0; pointer-events: none">
+        <div class="content">
+          <h1 id="workoutTitle">WORKOUT</h1>
+
+          <div id="timerSection" class="time-display">00:00:00.00</div>
+          <div id="lapContainer" class="lap-container"></div>
+
+          <div id="repsDisplay" class="reps-display" style="display: none">
+            <span id="repCount">0</span>
+            <p>REPS</p>
+          </div>
+
+          <div class="buttons">
+            <button id="startBtn" class="start-btn">START</button>
+            <button id="stopBtn" class="stop-btn">STOP</button>
+            <button id="resetBtn" class="reset-btn">RESET</button>
+            <button id="cancelBtn" class="cancel-btn">CANCEL</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
